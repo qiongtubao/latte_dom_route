@@ -49,7 +49,7 @@ b.html:
 	</div>
 ```
 
-##进阶
+##进阶 状态机
 html:
 ```html
 	<div latte-controller="routeDemo">
@@ -67,9 +67,11 @@ js:
 			index:"a",
 			end: function(to, next) {
 				//只有调用了next 会执行to  route里面如果有start就执行
+				next();
 			},
 			start: function(from, next) {
 				//只有调用了next 才会dom生命周期结束以及加载新dom
+				next();
 			},
     		a: {
     			url: "./a.html",
